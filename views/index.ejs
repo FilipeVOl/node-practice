@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <a href="/new">Create new message</a>
+    <ul>
+        <% messages.forEach(message => { %> 
+            <li>
+                <strong><%= message.text %></strong> 
+                <strong><%= message.user %></strong> 
+                <em><%= message.added %></em> 
+                <form action="/get" method="GET">
+                <button type="submit">Open</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
